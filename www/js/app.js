@@ -34,7 +34,8 @@ angular.module('starter', ['ionic', 'starter.controllers'])
       url: "/home",
       views: {
         'menuContent' :{
-          templateUrl: "templates/home.html"
+          templateUrl: "templates/home.html",
+          controller: 'HomeCtrl'
         }
       }
     })
@@ -43,7 +44,8 @@ angular.module('starter', ['ionic', 'starter.controllers'])
       url: "/converter",
       views: {
         'menuContent' :{
-          templateUrl: "templates/converter.html"
+          templateUrl: "templates/converter.html",
+          controller: 'ConverterCtrl'
         }
       }
     })
@@ -61,7 +63,7 @@ angular.module('starter', ['ionic', 'starter.controllers'])
         views: {
           'menuContent' :{
             templateUrl: "templates/double.html",
-            //controller: 'PlaylistsCtrl'
+            controller: 'DoubleCtrl'
           }
         }
       })
@@ -71,7 +73,7 @@ angular.module('starter', ['ionic', 'starter.controllers'])
         views: {
           'menuContent' :{
             templateUrl: "templates/timer.html",
-            //controller: 'PlaylistsCtrl'
+            controller: 'TimerCtrl'
           }
         }
       });
