@@ -13,6 +13,15 @@ angular.module('starter.controllers', [])
       });
 })
 
+    .controller('HomeCtrl', function($scope, $http) {
+
+        $http.get('json/dictionary.json').success(function(data) {
+            $scope.dictionary = data;
+        var random_num = Math.floor(Math.random() * 2);
+            var daily_word = data[random_num];
+            $scope.message = daily_word ;
+           });
+    })
 
     .controller('ConverterCtrl', function($scope){
       $scope.message = 'Converter this is cool';
