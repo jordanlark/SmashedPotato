@@ -5,6 +5,6 @@ Smashed Potato - Kitchen Tools app
 
 install ionic
 
-'$ionic serve'
+`$ionic serve`
 
 Enjoy!
