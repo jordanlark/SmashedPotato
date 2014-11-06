@@ -1,9 +1,63 @@
-<ion-view title="Double">
+<ion-view name="menuContent" title="Cooking Coversions">
     <ion-nav-buttons side="left">
         <button menu-toggle="left" class="button button-icon icon ion-navicon"></button>
     </ion-nav-buttons>
     <ion-content class="has-header">
-{{message}}
+
+
+        <form action="POST" id="conversionform">
+            <fieldset>
+                <legend>Liquid Conversion</legend>
+                <input type="text"placeholder="teaspoon" class="measureinput"/>
+
+                <select name="liquidmeasure" id="">
+                    <option value="teaspoon">teaspoon</option>
+                    <option value="tablespoon">Tablespoon</option>
+                    <option value="fluidoz">fluid ounces</option>
+                    <option value="cups">cups</option>
+                    <option value="pints">pints</option>
+                    <option value="quarts">quarts</option>
+                    <option value="gallons">gallons</option>
+                    <!-- <option value="mililiters">mililiters</option>
+                     <option value="liters">liters</option>-->
+                </select>
+                <input type="text" placeholder="tablespoons" class="measureinput"/>
+                <select name="liquidmeasure" id="">
+                    <option value="teaspoon">teaspoon</option>
+                    <option value="tablespoon">Tablespoon</option>
+                    <option value="fluidoz">fluid ounces</option>
+                    <option value="cups">cups</option>
+                    <option value="pints">pints</option>
+                    <option value="quarts">quarts</option>
+                    <option value="gallons">gallons</option>
+                    <!-- <option value="mililiters">mililiters</option>
+                     <option value="liters">liters</option>-->
+                </select>
+                <button class="button button-assertive button-small">Convert  <i class="ion-arrow-right-a"></i></button>
+               <!-- <input type="submit" value="Convert!" class="submit" />-->
+            </fieldset>
+            <fieldset>
+            <legend>Weight Conversion</legend>
+            <input type="text" placeholder="ounces" class="measureinput"/>
+            <select name="liquidmeasure" id="gobbldygook">
+                <option value="ounce">ounce</option>
+                <option value="pound">pound</option>
+                <!-- <option value="gram">gram</option>
+                 <option value="kilogram">kilogram</option>-->
+            </select>
+
+            <input type="text" placeholder="pounds" class="measureinput"/>
+            <select name="weightmeasure" id="">
+                <option value="ounce">ounce</option>
+                <option value="pound">pound</option>
+                <!-- <option value="gram">gram</option>
+                 <option value="kilogram">kilogram</option>-->
+            </select>
+             <button class="button button-assertive button-small">Convert <i class="ion-arrow-right-a"></i></button>
+            <!--<input type="submit" value="Convert!" class="submit" />-->
+            </fieldset>
+
+        </form>
        <ion-list> </ion-list>
     </ion-content>
 </ion-view>

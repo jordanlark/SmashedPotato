@@ -54,7 +54,7 @@ angular.module('starter', ['ionic', 'starter.controllers'])
       views: {
         'menuContent' :{
           templateUrl: "templates/dictionary.html",
-          controller: 'PlaylistsCtrl'
+          controller: 'DictionaryCtrl'
         }
       }
     })
@@ -78,6 +78,6 @@ angular.module('starter', ['ionic', 'starter.controllers'])
         }
       });
   // if none of the above states are matched, use this as the fallback
-  $urlRouterProvider.otherwise('/app/dictionary');
+  $urlRouterProvider.otherwise('/app/home');
 });
 

@@ -1,1 +1,35 @@
 /* Empty. Add your own CSS if you like */
+
+img#logo{
+    width: 100%;
+}
+
+form#conversionform legend{
+    font-size: 1em;
+    border: 0px solid #ffffff;
+    font-weight: 800;
+}
+form#conversionform fieldset{
+    background-color: rgba(0, 0, 0, 0.5);
+    border: 0px solid #ffffff;
+}
+
+form#conversionform .measureinput{
+    height: 1.5em;
+    margin: 2% 0px;
+    color: red;
+    border-radius: 2px;
+}
+form#conversionform select{
+    border-radius: 2px;
+}
+
+form#conversionform .submit{
+    border-radius: 2px;
+    background-color: red;
+}
+
+#searchDict{
+    font-size: 1.5em;
+    margin-bottom: 2%;
+}
