@@ -1,15 +1,23 @@
-<ion-view name="menuContent" title="Timer" class="bar-assertive">
+<ion-view name="menuContent" title="Timer" class="">
+    <header class="bar bar-header bar-assertive">
+        <h1 class="title">Timer</h1>
+    </header>
     <ion-nav-buttons side="left">
         <button menu-toggle="left" class="button button-icon icon ion-navicon"></button>
     </ion-nav-buttons>
     <ion-content class="has-header">
-        {{message}}
 
-       {{time}}
+       {{message}}
+        <input type="number" ng-model="number_amount"/>
+        <select name="timer" id="time">
+            <option value="seconds">Seconds</option>
+            <option value="minutes">Minutes</option>
+            <option value="hours">Hours</option>
+        </select>
 
         <div class="button-bar button button-dark">
-            <a class="button button-assertive icon ion-play" ng-click=""> Start</a>
-            <a class="button button-assertive icon ion-pause"ng-click="" > Pause</a>
+            <a class="button button-assertive icon ion-play"><!--/* ng-click="countdown(number_amount, unit_time)"-->Start</a>
+            <a class="button button-assertive icon ion-pause" ng-click="" > Pause</a>
             <a class="button button-assertive" ng-click=""> Clear</a>
         </div>
 

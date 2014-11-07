@@ -1,29 +1,49 @@
 
 <ion-view name="menuContent" title="Cooking Terms Dictionary">
-
+    <header class="bar bar-header bar-assertive">
+        <h1 class="title">Cooking Terms Dictionary</h1>
+    </header>
     <ion-nav-buttons side="left">
         <button menu-toggle="left" class="button button-icon icon ion-navicon"></button>
     </ion-nav-buttons>
-    <ion-content class="has-header">
+    <ion-content class="">
 
-        <input ng-model="query" class="ion-search" placeholder="Search:" id="searchDict">
-    <button class="button button-assertive ion-ios7-star">Favorites</button>
-        <ion-list ng-repeat="term in favorite">
-            <ion-item>{{term.term}}</ion-item>
+        <div class="list list-inset">
+            <label class="item item-input">
+                <i class="icon ion-search placeholder-icon"></i>
+                <input type="text" ng-model="query" class="ion-search"  placeholder="Search:">
+            </label>
+        </div>
+
+    <button class="button button-assertive button-full ion-ios7-star" ng-click="toggle(favtoggle)"> Favorites</button>
+      <div id="favtoggle"><ion-list>  <!--ng-repeat="term in favorites"-->
+            {{toggle.term}}
         </ion-list>
+      </div>
+        <!-- <ion-list class="" ng-repeat="term in dictionary | filter:query">
+             <ion-item class="ion-ios7-star-outline">{{"  " + term.term}}</ion-item>
+             <ion-item class="">{{term.definition}}</ion-item>
+         </ion-list>-->
 
-       <!-- <ion-list class="" ng-repeat="term in dictionary | filter:query">
-            <ion-item class="ion-ios7-star-outline">{{"  " + term.term}}</ion-item>
-            <ion-item class="">{{term.definition}}</ion-item>
-        </ion-list>-->
         <dl ng-repeat="term in dictionary | filter:query">
-           <ul>
-               <li>
-               <dt class="ion-ios7-star-outline">{{" " + term.term }}</dt>
-               <dd>{{ term.definition }}</dd>
+           <div class="fav" ng-click="pickFavorite(favorite)" >
+               <li class="item item-checkbox">
+                    <label class="checkbox checkbox-assertive">
+                        <input type="checkbox" ng-model="favorite">
+                    </label>
+                    <dt >{{term.term }}</dt>
+                    <dd class="item-text-wrap">{{ term.definition }}</dd>
                </li>
-           </ul>
+           </div>
         </dl>
+
+
+
+
+
+
+
         <div class="bar bar-footer">jordanlarkin &copy; 2014</div>
     </ion-content>
 </ion-view>
+<!--<i class="ion-ios7-star-outline"> </i>-->

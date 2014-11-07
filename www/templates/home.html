@@ -5,9 +5,15 @@
     <ion-content class="has-header">
 
        <img id="logo" src="img/smashedPotatoLogo.jpg" alt="A Smashed Potato"/>
-        <h3>Word of the day!</h3>
-          <h4>{{message.term}}</h4>
-        <p>What does that mean? Check out our <a href="#">dictionary</a> to find out!</p>
+
+       <div class="card">
+           <h3 id="dailyword">Word of the Day!</h3>
+           <dl>
+               <dt>{{message.term}}</dt>
+               <dd>{{message.definition}}</dd>
+           </dl>
+           <p>Want more? Check out our <a href="#">dictionary</a> to increase your cooking IQ!</p>
+       </div>
 
 
     </ion-content>

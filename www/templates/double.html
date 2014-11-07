@@ -1,11 +1,100 @@
-<ion-view name="menuContent" title="Double a Recipe">
+<ion-view name="menuContent" title="Double a Recipe" class="bar-assertive">
     <ion-nav-buttons side="left">
         <button menu-toggle="left" class="button button-icon icon ion-navicon"></button>
     </ion-nav-buttons>
     <ion-content class="has-header">
 
 
+        <input type="text" name="recipeTitle" placeholder="Recipe Title" ng-model="recipe_title"/>
+        <div class="item item-input-inset">
+            <label class="item-input-wrapper">
+                <input type="text" placeholder="ingredient" ng-model="ingredient">
+                <input type="text" placeholder="amount" ng-model="amount">
+                    <select name="unit" class="item-select col col-34" ng-model="unit" >
+                        <option value="teaspoon">teaspoon</option>
+                        <option value="tablespoon">Tablespoon</option>
+                        <option value="fluid oz">fluid ounces</option>
+                        <option value="cups">cups</option>
+                        <option value="pints">pints</option>
+                        <option value="quarts">quarts</option>
+                        <option value="gallons">gallons</option>
+                        <option value="pounds">pounds</option>
+                    </select>
+            </label></div>
+    <!--    <div class="item item-input-inset">
+            <label class="item-input-wrapper">
+                <input type="text" placeholder="ingredient" ng-model="ingredient1">
+                <input type="text" placeholder="amount" ng-model="amount1">
+                <select name="unit" class="item-select col col-34" ng-model="unit1" >
+                    <option value="teaspoon">teaspoon</option>
+                    <option value="tablespoon">Tablespoon</option>
+                    <option value="fluid oz">fluid ounces</option>
+                    <option value="cups">cups</option>
+                    <option value="pints">pints</option>
+                    <option value="quarts">quarts</option>
+                    <option value="gallons">gallons</option>
+                    <option value="pounds">pounds</option>
+                </select>
+            </label></div>
+        <div class="item item-input-inset">
+            <label class="item-input-wrapper">
+                <input type="text" placeholder="ingredient" ng-model="ingredient2">
+                <input type="text" placeholder="amount" ng-model="amount2">
+                <select name="unit" class="item-select col col-34" ng-model="unit2" >
+                    <option value="teaspoon">teaspoon</option>
+                    <option value="tablespoon">Tablespoon</option>
+                    <option value="fluid oz">fluid ounces</option>
+                    <option value="cups">cups</option>
+                    <option value="pints">pints</option>
+                    <option value="quarts">quarts</option>
+                    <option value="gallons">gallons</option>
+                    <option value="pounds">pounds</option>
+                </select>
+            </label></div>
+        <div class="item item-input-inset">
+            <label class="item-input-wrapper">
+                <input type="text" placeholder="ingredient" ng-model="ingredient3">
+                <input type="text" placeholder="amount" ng-model="amount3">
+                <select name="unit" class="item-select col col-34" ng-model="unit3">
+                    <option value="teaspoon">teaspoon</option>
+                    <option value="tablespoon">Tablespoon</option>
+                    <option value="fluid oz">fluid ounces</option>
+                    <option value="cups">cups</option>
+                    <option value="pints">pints</option>
+                    <option value="quarts">quarts</option>
+                    <option value="gallons">gallons</option>
+                    <option value="pounds">pounds</option>
+                </select>
+            </label></div>
+        <div class="item item-input-inset">
+            <label class="item-input-wrapper">
+                <input type="text" placeholder="ingredient" ng-model="ingredient4">
+                <input type="text" placeholder="amount" ng-model="amount4">
+                <select name="unit" class="item-select col col-34" ng-model="unit4">
+                    <option value="teaspoon">teaspoon</option>
+                    <option value="tablespoon">Tablespoon</option>
+                    <option value="fluid oz">fluid ounces</option>
+                    <option value="cups">cups</option>
+                    <option value="pints">pints</option>
+                    <option value="quarts">quarts</option>
+                    <option value="gallons">gallons</option>
+                    <option value="pounds">pounds</option>
+                </select>
+            </label></div>-->
 
-       <ion-list> </ion-list>
+        <button class="button button-full button-assertive" ng-click="double(recipe_title, ingredient, amount, unit)">Double!</button>
+        <h2>{{title}}</h2>
+        <ul class="recipe">
+            <li>{{message + "  "}}</li>
+            <li>{{message2 + "  "}}</li>
+            <li>{{message3}}</li>
+        </ul>
+
     </ion-content>
 </ion-view>
+
+
+<!--<h3> DGM 2120 <button class="show2120 btn btn-warning">show more <span class="glyphicon glyphicon-chevron-right"></span></button></h3>
+<div class="hidden2120">
+    <h4> Web Essentials </h4>
+</div>-->

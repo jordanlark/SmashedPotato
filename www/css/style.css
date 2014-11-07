@@ -1,16 +1,31 @@
 /* Empty. Add your own CSS if you like */
 
+/**********  Everything/Misc ***********/
+.headbar{
+
+}
+/**********  Home Page stuff  ***********/
+
 img#logo{
     width: 100%;
 }
 
+h3#dailyword{
+    text-align: center;
+
+}
+
+/**********   Covert Page stuff  ***********/
+form#conversionform dd{
+    display: inline;
+}
 form#conversionform legend{
     font-size: 1em;
     border: 0px solid #ffffff;
     font-weight: 800;
 }
 form#conversionform fieldset{
-    background-color: rgba(0, 0, 0, 0.5);
+    background-color: rgba(0, 0, 0, 0.2);
     border: 0px solid #ffffff;
 }
 
@@ -29,7 +44,30 @@ form#conversionform .submit{
     background-color: red;
 }
 
+
+/**********  Dictionary Page stuff  ***********/
 #searchDict{
     font-size: 1.5em;
     margin-bottom: 2%;
 }
+
+div.fav dt{
+  /*  background-color: rgba(255, 0, 0, 0.82);*/
+
+
+}
+div.fav dd{
+
+}
+
+
+/**********  Double Page stuff  ***********/
+ul.recipe li{
+    display: inline;
+    float: left;
+}
+
+
+/**********  Menu Page stuff  ***********/
+
+/**********  Timer Page stuff  ***********/
