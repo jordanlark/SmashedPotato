@@ -10,13 +10,35 @@ angular.module('starter.controllers', [])
       $http.get('json/dictionary.json').success(function(data) {
         $scope.dictionary = data;
       });
+        var fav = new localStorageDB(favs, localStorage);
 
+        if( fav.isNew() ) {
+            fav.createTable("favorites", ["word", "def"]);
+        }
+
+        $scope.pickFavorite = function (favoriteWord) {
+            fav.insert("favorites", {word: favoriteWord}); // def: "Phantoms in the brain"});
+            fav.commit();
+        }
         $scope.toggle = function(favtoggle){
             var favorites;
-            $scope.pickFavorite = function(term){
-                favorites = [term];
+
             }
-        }
+
+
+        // delete all books published in 1999
+        /*lib.deleteRows("books", {year: 1999});
+
+// delete all books published before 2005
+        lib.deleteRows("books", function(row) {
+            if(row.year < 2005) {
+                return true;
+            } else {
+                return false;
+            }
+        });
+
+        lib.commit(); // commit the deletions to localStorage*/
 })
 
     .controller('HomeCtrl', function($scope, $http) {
@@ -27,11 +49,9 @@ angular.module('starter.controllers', [])
             var daily_word = data[random_num];
             $scope.message = daily_word ;
            });
-
-        $scope.pickfavorite = function (fav) {
-
-        }
     })
+
+
 
     .controller('ConverterCtrl', function($scope){
       $scope.message = 'Converting is cool';
@@ -51,7 +71,6 @@ angular.module('starter.controllers', [])
 
           var recipe = [title, ingredient, increase, unit, ingredient1, increase1, unit1, ingredient2, increase2, unit2,
               ingredient3, increase3, unit3, ingredient4, increase4, unit4];
-          var recipes = [ "term", "Blend", "definition", "To incorporate", "two or more ingredients thoroughly."];
 
           $scope.title = title;
           $scope.message = ingredient;

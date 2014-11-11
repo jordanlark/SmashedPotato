@@ -16,9 +16,13 @@
         </div>
 
     <button class="button button-assertive button-full ion-ios7-star" ng-click="toggle(favtoggle)"> Favorites</button>
-      <div id="favtoggle"><ion-list>  <!--ng-repeat="term in favorites"-->
-            {{toggle.term}}
-        </ion-list>
+      <div id="favtoggle" ng-repeat="word in favorites"> </div>
+        <ion-item>
+            {{word.word}}
+        </ion-item>
+        <ion-item>
+            {{word.definition}}
+        </ion-item>
       </div>
         <!-- <ion-list class="" ng-repeat="term in dictionary | filter:query">
              <ion-item class="ion-ios7-star-outline">{{"  " + term.term}}</ion-item>
@@ -26,8 +30,8 @@
          </ion-list>-->
 
         <dl ng-repeat="term in dictionary | filter:query">
-           <div class="fav" ng-click="pickFavorite(favorite)" >
-               <li class="item item-checkbox">
+           <div class="fav"  >
+               <li class="item item-checkbox" ng-click="pickFavorite(favorite)">
                     <label class="checkbox checkbox-assertive">
                         <input type="checkbox" ng-model="favorite">
                     </label>
