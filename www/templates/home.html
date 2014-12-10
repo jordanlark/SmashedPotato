@@ -1,21 +1,29 @@
-<ion-view name="menuContent" title="Home">
-    <ion-nav-buttons side="left">
-        <button menu-toggle="left" class="button button-icon icon ion-navicon"></button>
-    </ion-nav-buttons>
-    <ion-content class="has-header">
+<ion-view name="menuContent" title="Home" >
 
+    <ion-nav-buttons side="left" class="">
+      <div class="bar bar-header bar-assertive">
+        <button menu-toggle="left" class="button button-icon icon ion-navicon"></button>
+        <div class="title">Home</div>
+      </div>
+    </ion-nav-buttons>
+
+    <ion-content>
+      <div id="content">
        <img id="logo" src="img/smashedPotatoLogo.jpg" alt="A Smashed Potato"/>
 
-       <div class="card">
+  <!--     <div class="">
            <h3 id="dailyword">Word of the Day!</h3>
-           <dl>
+           <div class="icondialy">
+           </div>
+           <dl id="daily">
                <dt>{{message.term}}</dt>
                <dd>{{message.definition}}</dd>
            </dl>
-           <p>Want more? Check out our <a href="#">dictionary</a> to increase your cooking IQ!</p>
-       </div>
+           <p>Want more to learn more? Check out our <a ui-sref="app.dictionary">dictionary</a> to increase your cooking IQ!</p>
+       </div> -->
 
+<!--<footer><p>jordanlarkin &copy; 2014</p></footer>-->
 
+</div>
     </ion-content>
 </ion-view>
-

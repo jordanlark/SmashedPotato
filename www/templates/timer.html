@@ -1,27 +1,48 @@
 <ion-view name="menuContent" title="Timer" class="">
-    <header class="bar bar-header bar-assertive">
-        <h1 class="title">Timer</h1>
-    </header>
-    <ion-nav-buttons side="left">
-        <button menu-toggle="left" class="button button-icon icon ion-navicon"></button>
-    </ion-nav-buttons>
-    <ion-content class="has-header">
 
-       {{message}}
-        <input type="number" ng-model="number_amount"/>
-        <select name="timer" id="time">
-            <option value="seconds">Seconds</option>
-            <option value="minutes">Minutes</option>
-            <option value="hours">Hours</option>
-        </select>
+  <ion-nav-buttons side="left" class="">
+    <div class="bar bar-header bar-assertive">
+      <button menu-toggle="left" class="button button-icon icon ion-navicon"></button>
+      <div class="title">Timer</div>
+    </div>
 
-        <div class="button-bar button button-dark">
-            <a class="button button-assertive icon ion-play"><!--/* ng-click="countdown(number_amount, unit_time)"-->Start</a>
-            <a class="button button-assertive icon ion-pause" ng-click="" > Pause</a>
-            <a class="button button-assertive" ng-click=""> Clear</a>
+  </ion-nav-buttons>
+
+    <ion-content class="has-header timers padding">
+
+<br>
+
+<div>
+  <input type="text" ng-model="number_amount" id="time_length" placeholder="30:00" class=""/>
+
+   <select name="timer_unit" id="time_unit">
+      <option value="seconds">Seconds</option>
+      <option value="minutes">Minutes</option>
+      <option value="hours">Hours</option>
+  </select>
+        <!--<ul id="time">
+          <li><input type="radio" name="seconds" value="seconds"><span>Seconds</span></li>
+          <li><input type="radio" name="minutes" value="minutes"><span>Minutes</span></li>
+          <li><input type="radio" name="hours" value="hours"><span>Hours</span></li>
+        </ul>-->
+<!--<br><br><br><br><br><br>
+<span class="" id="display_time <dt></dt>">{{message}}<div class="keepOpen"></div></span>-->
+
+			<div class="col-xs-4"><div id="timer"></div></div>
+      {{Timer}}
+<!--        <div class="timer_button button button-bar">
+            <a class="button button-assertive padding"><!/* ng-click="countdown(number_amount, unit_time)"<i class="icon ion-play"></i><span class="start_pause"></span></a>
+            <a class="button button-assertive" ng-click="" ><i class="icon ion-pause"></i><span class="start_pause"></span></a>
+            <a class="button button-assertive" ng-click=""> <span id="clear">Clear</span></a>
+            <div class="keepOpen"></div> -->
+
+<br><br><br><br>
         </div>
+          <button ng-click="play()" class="button button-assertive icon ion-play" id="play" name="play"></button>
+          <button ng-click="pause()" class="button  button-assertive icon ion-pause" id="pause" name="pause"></button>
+          <button ng-click="stop()" class="button  button-assertive icon ion-stop" id="stop" name="stop"></button>
 
-
-
+<footer><p>jordanlarkin &copy; 2014</p></footer>
     </ion-content>
+
 </ion-view>

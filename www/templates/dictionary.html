@@ -1,12 +1,13 @@
-
 <ion-view name="menuContent" title="Cooking Terms Dictionary">
-    <header class="bar bar-header bar-assertive">
-        <h1 class="title">Cooking Terms Dictionary</h1>
-    </header>
-    <ion-nav-buttons side="left">
+
+    <ion-nav-buttons side="left" class="">
+      <div class="bar bar-header bar-assertive">
         <button menu-toggle="left" class="button button-icon icon ion-navicon"></button>
+        <div class="title">Cooking Terms Dictionary</div>
+      </div>
     </ion-nav-buttons>
-    <ion-content class="">
+
+    <ion-content>
 
         <div class="list list-inset">
             <label class="item item-input">
@@ -16,27 +17,21 @@
         </div>
 
     <button class="button button-assertive button-full ion-ios7-star" ng-click="toggle(favtoggle)"> Favorites</button>
-      <div id="favtoggle" ng-repeat="word in favorites"> </div>
-        <ion-item>
-            {{word.word}}
-        </ion-item>
-        <ion-item>
-            {{word.definition}}
-        </ion-item>
-      </div>
+        <dl id="favlist">
+          <dt>{{word}}</dt>
+          <dd>{{def}}</dd>
+        </dl>
         <!-- <ion-list class="" ng-repeat="term in dictionary | filter:query">
              <ion-item class="ion-ios7-star-outline">{{"  " + term.term}}</ion-item>
              <ion-item class="">{{term.definition}}</ion-item>
          </ion-list>-->
 
         <dl ng-repeat="term in dictionary | filter:query">
-           <div class="fav"  >
-               <li class="item item-checkbox" ng-click="pickFavorite(favorite)">
-                    <label class="checkbox checkbox-assertive">
-                        <input type="checkbox" ng-model="favorite">
-                    </label>
-                    <dt >{{term.term }}</dt>
-                    <dd class="item-text-wrap">{{ term.definition }}</dd>
+           <div class="fav">
+              <li class="item item-checkbox" ng-click="pickFavorite(term)">
+                  <label class="checkbox checkbox-assertive"> <input type="checkbox" ></label>
+                  <dt ng-model="term.term">{{term.term }}</dt>
+                  <dd class="item-text-wrap" ng-model="term.definition">{{ term.definition }}</dd>
                </li>
            </div>
         </dl>
@@ -47,7 +42,7 @@
 
 
 
-        <div class="bar bar-footer">jordanlarkin &copy; 2014</div>
+      <!--  <div class="bar bar-footer">jordanlarkin &copy; 2014</div> -->
     </ion-content>
 </ion-view>
 <!--<i class="ion-ios7-star-outline"> </i>-->

@@ -1,64 +1,61 @@
 <ion-view name="menuContent" title="Cooking Coversions">
-    <ion-nav-buttons side="left">
-        <button menu-toggle="left" class="button button-icon icon ion-navicon"></button>
-    </ion-nav-buttons>
+
+  <ion-nav-buttons side="left" class="">
+    <div class="bar bar-header bar-assertive">
+      <button menu-toggle="left" class="button button-icon icon ion-navicon"></button>
+      <div class="title">Cooking Conversions</div>
+    </div>
+  </ion-nav-buttons>
+
     <ion-content class="has-header">
-        <form action="POST" id="conversionform">
-            <fieldset>
-                <legend>Liquid Conversion</legend>
-                <input type="text"placeholder="teaspoon" class="measureinput"/>
 
-                <select name="liquidmeasure" id=" ">
-                    <option value="teaspoon">teaspoon</option>
-                    <option value="tablespoon">Tablespoon</option>
-                    <option value="fluidoz">fluid ounces</option>
-                    <option value="cups">cups</option>
-                    <option value="pints">pints</option>
-                    <option value="quarts">quarts</option>
-                    <option value="gallons">gallons</option>
-                    <!-- <option value="mililiters">mililiters</option>
-                     <option value="liters">liters</option>-->
-                </select>
-                <input type="text" placeholder="tablespoons" class="measureinput"/>
-                <select name="liquidmeasure" id="  ">
-                    <option value="teaspoon">teaspoon</option>
-                    <option value="tablespoon">Tablespoon</option>
-                    <option value="fluidoz">fluid ounces</option>
-                    <option value="cups">cups</option>
-                    <option value="pints">pints</option>
-                    <option value="quarts">quarts</option>
-                    <option value="gallons">gallons</option>
-                    <!-- <option value="mililiters">mililiters</option>
-                     <option value="liters">liters</option>-->
-                </select>
-                <button class="button button-assertive button-small">Convert  <i class="ion-arrow-right-a"></i></button>
-                <!-- <input type="submit" value="Convert!" class="submit" />-->
-            </fieldset>
+        <form id="conversionform">
             <fieldset>
-                <legend>Weight Conversion</legend>
-                <input type="text" placeholder="ounces" class="measureinput"/>
-                <select name="liquidmeasure" id="gobbldygook">
-                    <option value="ounce">ounce</option>
-                    <option value="pound">pound</option>
-                    <!-- <option value="gram">gram</option>
-                     <option value="kilogram">kilogram</option>-->
-                </select>
+                <legend class="ion-waterdrop convert_title"> Liquid Conversion</legend>
+                <input type="text" placeholder=" 2 " class="measureinput" ng-model="num"/>
 
-                <input type="text" placeholder="pounds" class="measureinput"/>
-                <select name="weightmeasure" id="">
-                    <option value="ounce">ounce</option>
-                    <option value="pound">pound</option>
-                    <!-- <option value="gram">gram</option>
-                     <option value="kilogram">kilogram</option>-->
+                <select name="liquidmeasure" ng-model="unitone" ng-select="">
+                    <option name="gallons" value="gallons">gallons</option>
+                    <option name="quarts" value="quarts">quarts</option>
+                    <option name="pints" value="pints">pints</option>
+                    <option name="cups" value="cups">cups</option>
+                    <option name="tablespoons" value="tablespoons">Tablespoons</option>
+                    <option name="teaspoons" value="teaspoons">teaspoons</option>
                 </select>
-                <button class="button button-assertive button-small">Convert <i class="ion-arrow-right-a"></i></button>
-                <!--<input type="submit" value="Convert!" class="submit" />-->
+                <h6 class="equals">equals</h6>
+                <select name="liquidmeasure" ng-model="unittwo" ng-select="">
+                    <option name="teaspoons" value="teaspoons">teaspoons</option>
+                    <option name="tablespoons" value="tablespoons">Tablespoons</option>
+                    <option name="cups" value="cups">cups</option>
+                    <option name="pints" value="pints">pints</option>
+                    <option name="quarts" value="quarts">quarts</option>
+                    <option name="gallons" value="gallons">gallons</option>
+                </select>
+                <button class="button button-assertive button-small" ng-click="convertme(unitone, unittwo, num)"  >Convert <i class="ion-arrow-right-a"></i></button>
             </fieldset>
 
+            <div id="display_convert" class="" >
+              {{num }} {{unitone}} {{number}} {{unittwo}}
+            </div>
+
+            <fieldset>
+                <legend class="ion-pizza convert_title"> Weight Conversion</legend>
+                <input type="text" placeholder="2" class="measureinput" ng-model="numtwo"/>
+                <select name="liquidmeasure" ng-model="unitthree">
+                    <option name="ounces" value="ounces">ounces</option>
+                    <option name="pounds" value="pounds">pounds</option>
+                </select>
+                  <h6 class="equals">equals</h6>
+                <select name="liquidmeasure" ng-model="unitfour">
+                    <option name="ounces" value="ounces">ounces</option>
+                    <option name="pounds" value="pounds">pounds</option>
+                </select>
+                <button class="button button-assertive button-small" ng-click="convertit(unitthree, unitfour, numtwo)" ng-model="clickit" >Convert <i class="ion-arrow-right-a"></i></button>
+            </fieldset>
+            <div id="display_convert" ng-hide="clickit" >
+              {{numtwo }} {{unitthree}} {{numbertwo}} {{unitfour}}
+            </div>
         </form>
-
-
 
     </ion-content>
 </ion-view>
-

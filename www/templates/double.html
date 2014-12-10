@@ -1,7 +1,12 @@
 <ion-view name="menuContent" title="Double a Recipe" class="bar-assertive">
-    <ion-nav-buttons side="left">
-        <button menu-toggle="left" class="button button-icon icon ion-navicon"></button>
-    </ion-nav-buttons>
+
+  <ion-nav-buttons side="left" class="">
+    <div class="bar bar-header bar-assertive">
+      <button menu-toggle="left" class="button button-icon icon ion-navicon"></button>
+      <div class="title">Double a Recipe</div>
+    </div>
+  </ion-nav-buttons>
+
     <ion-content class="has-header">
 
 
@@ -85,9 +90,9 @@
         <button class="button button-full button-assertive" ng-click="double(recipe_title, ingredient, amount, unit)">Double!</button>
         <h2>{{title}}</h2>
         <ul class="recipe">
-            <li>{{message + "  "}}</li>
-            <li>{{message2 + "  "}}</li>
-            <li>{{message3}}</li>
+            <li>{{ ingredient + "  "}}</li>
+            <li>{{" " + message2 + "  "}}</li>
+            <li>{{" " + unit}}</li>
         </ul>
 
     </ion-content>

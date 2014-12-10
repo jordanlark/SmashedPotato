@@ -1,18 +1,30 @@
 /* Empty. Add your own CSS if you like */
 
 /**********  Everything/Misc ***********/
-.headbar{
-
+.headerbar{
+background-color: blue;
+color: blue;
 }
 /**********  Home Page stuff  ***********/
 
-img#logo{
+img#logo{ /* smashed potato logo*/
     width: 100%;
 }
 
-h3#dailyword{
+h3#dailyword{ /* WOrd of the day title*/
     text-align: center;
-
+    color: #ef4e3a;
+    font-family: fantasy;
+}
+#daily{ /* dl for daily word */
+padding:2%;
+}
+#content{ /* everytihng on home page
+  background-color: rgba(0, 0, 0, 0.2);*/
+}
+.icondialy{ /* fork icon*/
+  float: left;
+  width: 20%:
 }
 
 /**********   Covert Page stuff  ***********/
@@ -25,14 +37,12 @@ form#conversionform legend{
     font-weight: 800;
 }
 form#conversionform fieldset{
-    background-color: rgba(0, 0, 0, 0.2);
     border: 0px solid #ffffff;
 }
 
 form#conversionform .measureinput{
     height: 1.5em;
     margin: 2% 0px;
-    color: red;
     border-radius: 2px;
 }
 form#conversionform select{
@@ -43,31 +53,122 @@ form#conversionform .submit{
     border-radius: 2px;
     background-color: red;
 }
-
-
+form legend{
+  background-color: rgba(0, 0, 0, 0.2);
+  border-radius: 8px;
+  padding-left: 1%;
+  margin-top: 5px;
+}
+select{
+  border-radius: 2px;
+}
+.word{
+  font-size: 2em;
+  line-height: 1.5;
+  }
+#arrows{
+  margin: auto;
+  width: 30%;
+  padding-left: 15%;
+}
+#display_convert{
+  margin: 5%  ;
+  background-color: rgba(0, 0, 0, 0.1);
+  padding: 5%;
+  border: 5px #ef4e3a solid;
+  border-radius: 2px;
+  font-size: 1.5em;
+  text-align: center;
+}
+legend{
+  font-size: 22em;
+  margin-top: 2%;
+}
 /**********  Dictionary Page stuff  ***********/
 #searchDict{
     font-size: 1.5em;
     margin-bottom: 2%;
 }
-
-div.fav dt{
-  /*  background-color: rgba(255, 0, 0, 0.82);*/
-
-
-}
-div.fav dd{
-
+dl#favlist{
+padding: 2%;
 }
 
-
-/**********  Double Page stuff  ***********/
-ul.recipe li{
-    display: inline;
-    float: left;
+/**********  Counter Page stuff  ***********/
+#display_amount{
+  font-size: 15em;
+  margin: auto;
+  text-align: center;
 }
-
+.counter{
+  margin: auto;
+}
+.count_buttons{
+  width:100%;
+}
 
 /**********  Menu Page stuff  ***********/
+.menu{
+  color:blue;
+}
 
 /**********  Timer Page stuff  ***********/
+#display_time{
+  width: 100%;
+  font-size: 8.5em;
+  color: red;
+  text-align: center
+  margin: auto;
+  /*padding: 2%;
+  background-color: rgba(0, 0, 0, 0.2);*/
+}
+#time_length{
+  width: 50%;
+  font-size: 20px;
+  float:left;
+  text-align: center
+}
+#time_unit{
+  border: 0px solid #fff;
+  color: red;
+/*  width: 15%;*/
+  text-align: center;
+  font-size: 2em;
+}
+#timer_button i{
+}
+.start_pause{
+  font-size: .5em;
+}
+.timer_button i{
+}
+
+/*ul#time li{
+  display: block;
+}
+ul#time{
+  padding: 2%;
+  margin: 2%;
+  float: right;
+}*/
+
+.keepOpen{
+  clear:both;
+}
+/**********  Footer stuff  ***********/
+footer{
+  font-size: .6em;
+  clear: both;
+}
+
+
+
+/**********  Ionic Defalt Color Values  ***********
+$light:                 #fff !default;
+$stable:                #f8f8f8 !default;
+$positive:  dark blue   #4a87ee !default;
+$calm:      bright blue #43cee6 !default;
+$balanced:  green       #66cc33 !default;
+$energized: gold        #f0b840 !default;
+$assertive: red         #ef4e3a !default;
+$royal:     purple      #8a6de9 !default;
+$dark:                  #444 !default;  */

@@ -1,4 +1,4 @@
-angular.module('starter.controllers', [])
+angular.module('smashedpotato.controllers', [])
 
 
 .controller('AppCtrl', function($scope) {
@@ -7,95 +7,239 @@ angular.module('starter.controllers', [])
 
 
 .controller('DictionaryCtrl', function($scope, $http) {
+
       $http.get('json/dictionary.json').success(function(data) {
         $scope.dictionary = data;
-      });
-        var fav = new localStorageDB(favs, localStorage);
+       });
 
+        //only run it new
+        var fav = new localStorageDB("favs", localStorage);
+
+        //create table
         if( fav.isNew() ) {
-            fav.createTable("favorites", ["word", "def"]);
+          fav.createTable("favorites", ["term", "definition"]);
         }
+        //commit table
+        fav.commit();
 
-        $scope.pickFavorite = function (favoriteWord) {
-            fav.insert("favorites", {word: favoriteWord}); // def: "Phantoms in the brain"});
-            fav.commit();
-        }
-        $scope.toggle = function(favtoggle){
-            var favorites;
+        $scope.pickFavorite = function (favW) {
+           //insert into table
+      		fav.insert("favorites", {term: favW.term, definition: favW.definition});
+          //commit insert
+          fav.commit();
 
-            }
-
-
-        // delete all books published in 1999
-        /*lib.deleteRows("books", {year: 1999});
-
-// delete all books published before 2005
-        lib.deleteRows("books", function(row) {
-            if(row.year < 2005) {
-                return true;
-            } else {
-                return false;
-            }
-        });
-
-        lib.commit(); // commit the deletions to localStorage*/
+          $scope.word = favW.term;
+          $scope.def = favW.definition;
+         }
 })
+
 
     .controller('HomeCtrl', function($scope, $http) {
 
         $http.get('json/dictionary.json').success(function(data) {
             $scope.dictionary = data;
+
+
         var random_num = Math.floor(Math.random() * 2);
             var daily_word = data[random_num];
             $scope.message = daily_word ;
-           });
+          });
     })
 
 
 
     .controller('ConverterCtrl', function($scope){
-      $scope.message = 'Converting is cool';
+
+
+                 $scope.convertme = function(one, two, num){
+
+                    var num_converted = num;
+
+                    if( one == "teaspoons"){
+                      if(two == "teaspoons"){
+                        num_converted = num_converted * 7;
+                      $scope.number =  "= " + num_converted;
+                      }else if( two == "tablespoons"){
+                        num_converted = num_converted * (1/3);
+                        $scope.number =  "= " + num_converted;
+                      }else if( two == "cups"){
+                        num_converted = num_converted * 1/48;
+                        $scope.number =  "= " + num_converted;
+                      }else if( two == "pints"){
+                        num_converted = num_converted * 1/96;
+                        $scope.number =  "= " + num_converted;
+                      }else if( two == "quarts"){
+                        num_converted = num_converted * 1/192;
+                        $scope.number =  "= " + num_converted;
+                      }else if( two == "gallons"){
+                        num_converted = num_converted * 1/786;
+                        $scope.number =  "= " + num_converted;
+                      }//end teaspoon -> gallons
+                    }else if( one == "tablespoons"){
+                      if(two == "teaspoons"){
+                        num_converted = num_converted * 3;
+                        $scope.number =  "= " + num_converted;
+                      }else if( two == "tablespoons"){
+                        num_converted = num_converted * 1;
+                        $scope.number =  "= " + num_converted;
+                      }else if( two == "cups"){
+                        num_converted = num_converted * 1/16;
+                        $scope.number =  "= " + num_converted;
+                      }else if( two == "pints"){
+                        num_converted = num_converted * 1/32;
+                        $scope.number =  "= " + num_converted;
+                      }else if( two == "quarts"){
+                        num_converted = num_converted * 1/64;
+                        $scope.number =  "= " + num_converted;
+                      }else if( two == "gallons"){
+                        num_converted = num_converted * 1/256;
+                        $scope.number =  "= " + num_converted;
+                      }
+                    }else if( one == "cups"){
+                      if(two == "teaspoons"){
+                        num_converted = num_converted * 48;
+                        $scope.number =  "= " + num_converted;
+                      }else if( two == "tablespoons"){
+                        num_converted = num_converted * 16;
+                        $scope.number =  "= " + num_converted;
+                      }else if( two == "cups"){
+                        num_converted = num_converted * 1;
+                        $scope.number =  "= " + num_converted;
+                      }else if( two == "pints"){
+                        num_converted = num_converted * 1/2;
+                        $scope.number =  "= " + num_converted;
+                      }else if( two == "quarts"){
+                        num_converted = num_converted * 1/4;
+                        $scope.number =  "= " + num_converted;
+                      }else if( two == "gallons"){
+                        num_converted = num_converted * 1/6;
+                        $scope.number =  "= " + num_converted;
+                      }
+                    }else if( one == "pints"){
+                      if(two == "teaspoons"){
+                        num_converted = num_converted * 72;
+                        $scope.number =  "= " + num_converted;
+                      }else if( two == "tablespoons"){
+                        num_converted = num_converted * 24;
+                        $scope.number =  "= " + num_converted;
+                      }else if( two == "cups"){
+                        num_converted = num_converted * 2;
+                        $scope.number =  "= " + num_converted;
+                      }else if( two == "pints"){
+                        num_converted = num_converted * 1;
+                        $scope.number =  "= " + num_converted;
+                      }else if( two == "quarts"){
+                        num_converted = num_converted * 1/2;
+                        $scope.number =  "= " + num_converted;
+                      }else if( two == "gallons"){
+                        num_converted = num_converted * 1/8;
+                        $scope.number =  "= " + num_converted;
+                      }
+                    }else if( one == "quarts"){
+                      if(two == "teaspoons"){
+                        num_converted = num_converted * 192;
+                        $scope.number =  "= " + num_converted;
+                      }else if( two == "tablespoons"){
+                        num_converted = num_converted * 64;
+                        $scope.number =  "= " + num_converted;
+                      }else if( two == "cups"){
+                        num_converted = num_converted * 4;
+                        $scope.number =  "= " + num_converted;
+                      }else if( two == "pints"){
+                        num_converted = num_converted * 2;
+                        $scope.number =  "= " + num_converted;
+                      }else if( two == "quarts"){
+                        num_converted = num_converted * 1;
+                        $scope.number =  "= " + num_converted;
+                      }else if( two == "gallons"){
+                        num_converted = num_converted * 1/4;
+                        $scope.number =  "= " + num_converted;
+                      }
+                    }else if( one == "gallons"){
+                      if(two == "teaspoons"){
+                        num_converted = num_converted * 768;
+                        $scope.number =  "= " + num_converted;
+                      }else if( two == "tablespoons"){
+                        num_converted = num_converted * 256;
+                        $scope.number =  "= " + num_converted;
+                      }else if( two == "cups"){
+                        num_converted = num_converted * 16;
+                        $scope.number =  "= " + num_converted;
+                      }else if( two == "pints"){
+                        num_converted = num_converted * 8;
+                        $scope.number =  "= " + num_converted;
+                      }else if( two == "quarts"){
+                        num_converted = num_converted * 4;
+                        $scope.number =  "= " + num_converted;
+                      }else if( two == "gallons"){
+                        num_converted = num_converted * 1;
+                        $scope.number =  "= " + num_converted;
+                      }
+                    }
+                }//end convertme
+          $scope.convertit = function(one, two, num){
+
+             var number_convert = num;
+
+             if( one == "ounces"){
+               if(two == "ounces"){
+                 number_convert = number_convert * 1;
+               $scope.numbertwo =  "= " + number_convert;
+             }else if( two == "pounds"){
+                 number_convert = number_convert * 1/16;
+                 $scope.numbertwo =  "= " + number_convert;
+               }
+             }else if(one == "pounds"){
+               if(two == "ounces"){
+                 number_convert = number_convert * 16;
+               $scope.numbertwo =  "= " + number_convert;
+             }else if( two == "pounds"){
+                 number_convert = number_convert * 1;
+                 $scope.numbertwo = "= " + number_convert;
+               }
+             }
+          }//end converit
+
     })
-
-
-
-    .controller('DoubleCtrl', function($scope){
-      $scope.double = function(title, ingredient, amount, unit, ingredient1, amount1, unit1, ingredient2, amount2, unit2,
-        ingredient3, amount3, unit3, ingredient4, amount4, unit4){
-
-          var increase = amount * 2;
-          var increase1 = amount1 *2;
-          var increase2 = amount2 * 2;
-          var increase3 = amount3 * 2;
-          var increase4 = amount4 * 2;
-
-          var recipe = [title, ingredient, increase, unit, ingredient1, increase1, unit1, ingredient2, increase2, unit2,
-              ingredient3, increase3, unit3, ingredient4, increase4, unit4];
-
-          $scope.title = title;
-          $scope.message = ingredient;
-          $scope.message2 = increase;
-          $scope.message3 = unit;
-      }
-    })
-
 
     .controller('TimerCtrl', function($scope){
-       /* $scope.countdown(number, timer)
-        var number = today.date();
-      $scope.message = "52";*/
+
+      //$scope.message = countup;
+
+      //$scope.times = function(amount)
+      //var countup = new Timer();
+
+    //  countup.start(); // starts the timer
+  //    countup.timings(); // {duration: 5928, seconds: 48, minutes: 38, hours: 1}
+    //  countup.pause(); // pauses the timer
+    //  countup.reset(); // resets all values
+
+
     })
 
+    .controller('CounterCtrl', function($scope){
 
+      var num = 01;
+      $scope.number = num;
 
-/*$(function course2110(){
-    $('.show2110').click(function hiddenStuff() {
-        $(".hidden2110").slideToggle('normal',function slidetoggle(){ //Shows Nav area
-            if ($('.hidden2110').is(':visible')) {
-                $('.show2110').text('show less ^^^^');
-            } else {
-                $('.show2110').text('show more >>');
-            } //end of if
-        }); //end of slidetoggle
-    }); //end of hiddenStuff
-}); //end showContent*/
+        $scope.addUp = function(){
+              $scope.num = num++;
+              return $scope.num;
+        }
+
+       $scope.subtract = function(){
+              if($scope.num >= 1){
+                $scope.num--;
+                return $scope.num;
+              }else{
+                $scope.num = 0;
+                return $scope.num;
+              }
+       }
+
+       $scope.clear = function(){
+              $scope.num = 0;
+              return $scope.num;
+       }
+
+  })
