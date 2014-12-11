@@ -1,24 +1,26 @@
 SmashedPotato
 =============
 
-###Smashed Potato - Kitchen Tools app
+###Smashed Potato - Kitchen Tools
 
 ####App Details
 Smashed Potato is a collection of tools for the kitchen designed to enhance your cooking experience by making those menial tasks easier.
 
 ####Dev Instructions
-This application makes use of Agularjs and the Ionic Framework. To run you must  do the following
+This application makes use of Agularjs and the Ionic Framework. To run you must do the following
 
-1.Install NodeJS
+Install NodeJS
 
+Then run the following command-
 `npm install -g cordova ionic`
 
-2.Clone the repository to your local machine
+Clone the repository to your local machine
 
-3.Make sure you are in correct directory, then enter the following command:
+Make sure you are in correct directory, then enter the following command:
 
-`$ionic serve`
+`$ionic serve` (opens app in browser)
+ or
+ `ionic run android`(to open in an emulator)
 
-Enjoy!
-
-
+####Current Known Bugs
+Timer is not yet functional
