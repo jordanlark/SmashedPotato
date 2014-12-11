@@ -1,7 +1,7 @@
 <ion-view name="menuContent" title="Cooking Coversions">
 
   <ion-nav-buttons side="left" class="">
-    <div class="bar bar-header bar-assertive">
+    <div class="bar bar-header bar-calm">
       <button menu-toggle="left" class="button button-icon icon ion-navicon"></button>
       <div class="title">Cooking Conversions</div>
     </div>
@@ -31,7 +31,7 @@
                     <option name="quarts" value="quarts">quarts</option>
                     <option name="gallons" value="gallons">gallons</option>
                 </select>
-                <button class="button button-assertive button-small" ng-click="convertme(unitone, unittwo, num)"  >Convert <i class="ion-arrow-right-a"></i></button>
+                <button class="button button-calm button-small" ng-click="convertme(unitone, unittwo, num)"  >Convert <i class="ion-arrow-right-a"></i></button>
             </fieldset>
 
             <div id="display_convert" class="" >
@@ -50,7 +50,7 @@
                     <option name="ounces" value="ounces">ounces</option>
                     <option name="pounds" value="pounds">pounds</option>
                 </select>
-                <button class="button button-assertive button-small" ng-click="convertit(unitthree, unitfour, numtwo)" ng-model="clickit" >Convert <i class="ion-arrow-right-a"></i></button>
+                <button class="button button-calm button-small" ng-click="convertit(unitthree, unitfour, numtwo)" ng-model="clickit" >Convert <i class="ion-arrow-right-a"></i></button>
             </fieldset>
             <div id="display_convert" ng-hide="clickit" >
               {{numtwo }} {{unitthree}} {{numbertwo}} {{unitfour}}

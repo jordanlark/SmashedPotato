@@ -204,7 +204,7 @@ angular.module('smashedpotato.controllers', [])
 
     .controller('TimerCtrl', function($scope){
 
-      //$scope.message = countup;
+      $scope.timer = '30:00';
 
       //$scope.times = function(amount)
       //var countup = new Timer();

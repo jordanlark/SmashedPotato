@@ -1,7 +1,7 @@
 <ion-view name="menuContent" title="Timer" class="">
 
   <ion-nav-buttons side="left" class="">
-    <div class="bar bar-header bar-assertive">
+    <div class="bar bar-header bar-calm">
       <button menu-toggle="left" class="button button-icon icon ion-navicon"></button>
       <div class="title">Timer</div>
     </div>
@@ -9,10 +9,8 @@
   </ion-nav-buttons>
 
     <ion-content class="has-header timers padding">
-
 <br>
 
-<div>
   <input type="text" ng-model="number_amount" id="time_length" placeholder="30:00" class=""/>
 
    <select name="timer_unit" id="time_unit">
@@ -20,28 +18,16 @@
       <option value="minutes">Minutes</option>
       <option value="hours">Hours</option>
   </select>
-        <!--<ul id="time">
-          <li><input type="radio" name="seconds" value="seconds"><span>Seconds</span></li>
-          <li><input type="radio" name="minutes" value="minutes"><span>Minutes</span></li>
-          <li><input type="radio" name="hours" value="hours"><span>Hours</span></li>
-        </ul>-->
-<!--<br><br><br><br><br><br>
-<span class="" id="display_time <dt></dt>">{{message}}<div class="keepOpen"></div></span>-->
-
+<br><br><br><br>
 			<div class="col-xs-4"><div id="timer"></div></div>
-      {{Timer}}
-<!--        <div class="timer_button button button-bar">
-            <a class="button button-assertive padding"><!/* ng-click="countdown(number_amount, unit_time)"<i class="icon ion-play"></i><span class="start_pause"></span></a>
-            <a class="button button-assertive" ng-click="" ><i class="icon ion-pause"></i><span class="start_pause"></span></a>
-            <a class="button button-assertive" ng-click=""> <span id="clear">Clear</span></a>
-            <div class="keepOpen"></div> -->
+      <span id="display_time">{{timer}}</span>
 
 <br><br><br><br>
-        </div>
-          <button ng-click="play()" class="button button-assertive icon ion-play" id="play" name="play"></button>
-          <button ng-click="pause()" class="button  button-assertive icon ion-pause" id="pause" name="pause"></button>
-          <button ng-click="stop()" class="button  button-assertive icon ion-stop" id="stop" name="stop"></button>
-
+<div class="count_buttons">
+          <button ng-click="play()" class="button button-calm icon ion-play" id="play" name="play"></button>
+          <button ng-click="pause()" class="button button-calm icon ion-pause" id="pause" name="pause"></button>
+          <button ng-click="stop()" class="button  button-calm icon ion-stop" id="stop" name="stop"></button>
+</div>
 <footer><p>jordanlarkin &copy; 2014</p></footer>
     </ion-content>
 

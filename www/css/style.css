@@ -5,6 +5,9 @@
 background-color: blue;
 color: blue;
 }
+body{
+  background-image: url('../img/symphony.png');
+}
 /**********  Home Page stuff  ***********/
 
 img#logo{ /* smashed potato logo*/
@@ -13,7 +16,7 @@ img#logo{ /* smashed potato logo*/
 
 h3#dailyword{ /* WOrd of the day title*/
     text-align: center;
-    color: #ef4e3a;
+    color: #66cc33;
     font-family: fantasy;
 }
 #daily{ /* dl for daily word */
@@ -49,10 +52,6 @@ form#conversionform select{
     border-radius: 2px;
 }
 
-form#conversionform .submit{
-    border-radius: 2px;
-    background-color: red;
-}
 form legend{
   background-color: rgba(0, 0, 0, 0.2);
   border-radius: 8px;
@@ -75,7 +74,7 @@ select{
   margin: 5%  ;
   background-color: rgba(0, 0, 0, 0.1);
   padding: 5%;
-  border: 5px #ef4e3a solid;
+  border: 5px #66cc33 solid;
   border-radius: 2px;
   font-size: 1.5em;
   text-align: center;
@@ -100,10 +99,12 @@ padding: 2%;
   text-align: center;
 }
 .counter{
-  margin: auto;
+  margin: 0 25%;
 }
-.count_buttons{
-  width:100%;
+.count_buttons button{
+  width: 100px;
+  margin: 2%;
+  margin-top: 0;
 }
 
 /**********  Menu Page stuff  ***********/
@@ -115,7 +116,7 @@ padding: 2%;
 #display_time{
   width: 100%;
   font-size: 8.5em;
-  color: red;
+  color: #66cc33;
   text-align: center
   margin: auto;
   /*padding: 2%;
@@ -129,7 +130,7 @@ padding: 2%;
 }
 #time_unit{
   border: 0px solid #fff;
-  color: red;
+  color: #66cc33;
 /*  width: 15%;*/
   text-align: center;
   font-size: 2em;
@@ -169,6 +170,6 @@ $positive:  dark blue   #4a87ee !default;
 $calm:      bright blue #43cee6 !default;
 $balanced:  green       #66cc33 !default;
 $energized: gold        #f0b840 !default;
-$assertive: red         #ef4e3a !default;
+$assertive: red         #66cc33 !default;
 $royal:     purple      #8a6de9 !default;
 $dark:                  #444 !default;  */
