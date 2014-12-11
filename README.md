@@ -11,16 +11,19 @@ This application makes use of Agularjs and the Ionic Framework. To run you must 
 
 Install NodeJS
 
-Then run the following command-
+Then run the following command:
+
 `npm install -g cordova ionic`
 
 Clone the repository to your local machine
 
 Make sure you are in correct directory, then enter the following command:
 
-`$ionic serve` (opens app in browser)
+`$ionic serve`
+(opens app in browser)
  or
- `ionic run android`(to open in an emulator)
+ `ionic run android`
+ (to open in an emulator)
 
 ####Current Known Bugs
 Timer is not yet functional

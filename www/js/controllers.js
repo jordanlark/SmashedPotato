@@ -10,7 +10,7 @@ angular.module('smashedpotato.controllers', [])
 
       $http.get('json/dictionary.json').success(function(data) {
         $scope.dictionary = data;
-       });
+      });
 
         //only run it new
         var fav = new localStorageDB("favs", localStorage);
